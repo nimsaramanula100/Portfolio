@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manula Nimsara Samarasinghe | Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Manula Nimsara Samarasinghe - Creative Full-Stack Developer & UI/UX Designer from Dehiwala, Sri Lanka. HNDIT student building modern web experiences.">
+    <meta name="keywords" content="Manula Nimsara Samarasinghe, Full-Stack Developer, Web Developer, Portfolio, UI/UX Designer, Student Developer, SLIATE, HNDIT">
+    <meta name="author" content="Manula Nimsara Samarasinghe">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-line"></div>
+            <div class="preloader-text">
+                <span>M</span><span>A</span><span>N</span><span>U</span><span>L</span><span>A</span>
+            </div>
+            <div class="preloader-percentage" id="preloaderPercentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" id="navLogo">
+                <span class="logo-bracket">&lt;</span>MN<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#contact" class="nav-cta">Hire Me</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge animate-on-scroll">
+                    <span class="badge-dot"></span>
+                    Available for freelance work
+                </div>
+                <h1 class="hero-title animate-on-scroll">
+                    <span class="hero-greeting"><span class="wave-hand">👋</span> Hello,</span>
+                    <span class="hero-intro-row">
+                        <span class="hero-im">I'm</span>
+                        <span class="hero-name">
+                            <span class="name-letter" style="--i:0">M</span><span class="name-letter" style="--i:1">a</span><span class="name-letter" style="--i:2">n</span><span class="name-letter" style="--i:3">u</span><span class="name-letter" style="--i:4">l</span><span class="name-letter" style="--i:5">a</span>
+                            <span class="name-space">&nbsp;</span>
+                            <span class="name-letter" style="--i:6">N</span><span class="name-letter" style="--i:7">i</span><span class="name-letter" style="--i:8">m</span><span class="name-letter" style="--i:9">s</span><span class="name-letter" style="--i:10">a</span><span class="name-letter" style="--i:11">r</span><span class="name-letter" style="--i:12">a</span>
+                        </span>
+                    </span>
+                </h1>
+                <div class="hero-role animate-on-scroll">
+                    <span class="role-prefix">I'm a</span>
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+                <p class="hero-description animate-on-scroll">
+                    A passionate student developer crafting beautiful, functional, and user-centered digital experiences. 
+                    I turn ideas into elegant, scalable solutions.
+                </p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Let's Talk</span>
+                        <i class="fas fa-comment-dots"></i>
+                    </a>
+                </div>
+                <div class="hero-stats animate-on-scroll">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Years Exp</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper animate-on-scroll">
+                <div class="hero-image-container">
+                    <div class="hero-image-glow"></div>
+                    <div class="hero-image-ring"></div>
+                    <div class="hero-image-ring ring-2"></div>
+                    <img src="assets/profile.jpg" alt="Manula Nimsara Samarasinghe" class="hero-image" id="heroImage">
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="floating-badge badge-3">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-social-sidebar">
+            <a href="https://github.com/nimsaramanula100" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/manula-nimsara-87a3a72a9" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/itz_manu.n.s_" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="social-line"></div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <p class="section-subtitle">Get to know the person behind the code</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-col animate-on-scroll">
+                    <div class="about-image-card">
+                        <img src="assets/profile.jpg" alt="Manula Nimsara Samarasinghe" class="about-image">
+                        <div class="about-image-overlay">
+                            <div class="experience-badge">
+                                <span class="exp-number">2+</span>
+                                <span class="exp-text">Years of<br>Experience</span>
+                            </div>
+                        </div>
+                        <div class="about-dots"></div>
+                    </div>
+                </div>
+                <div class="about-content-col animate-on-scroll">
+                    <h3 class="about-heading">A passionate developer who loves creating <span class="gradient-text">digital magic</span></h3>
+                    <p class="about-text">
+                        I'm Manula Nimsara Samarasinghe, a dedicated student developer with a burning passion for building 
+                        innovative web solutions. Currently pursuing my HNDIT at SLIATE, I combine academic knowledge 
+                        with hands-on project experience to create impactful digital products.
+                    </p>
+                    <p class="about-text">
+                        My journey in tech started with curiosity about how websites work, and it has evolved 
+                        into a deep love for full-stack development, UI/UX design, and solving complex problems 
+                        with elegant code.
+                    </p>
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-user"></i></span>
+                            <div>
+                                <span class="info-label">Name</span>
+                                <span class="info-value">Manula Nimsara Samarasinghe</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
+                            <div>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">nimsaramanula100@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <div>
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Dehiwala, Sri Lanka</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-graduation-cap"></i></span>
+                            <div>
+                                <span class="info-label">Education</span>
+                                <span class="info-value">HNDIT - SLIATE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Contact Me</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline" id="downloadCV">
+                            <span>Download CV</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-tabs animate-on-scroll">
+                <button class="skill-tab active" data-tab="frontend">Frontend</button>
+                <button class="skill-tab" data-tab="backend">Backend</button>
+                <button class="skill-tab" data-tab="tools">Tools & Others</button>
+            </div>
+            <div class="skills-content">
+                <div class="skills-grid active" id="frontend">
+                    <div class="skill-card animate-on-scroll" style="--delay: 0">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h4 class="skill-name">HTML5</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 1">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h4 class="skill-name">CSS3</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 2">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h4 class="skill-name">JavaScript</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 3">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4 class="skill-name">React</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 4">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-vuejs"></i>
+                        </div>
+                        <h4 class="skill-name">Vue.js</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 5">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-sass"></i>
+                        </div>
+                        <h4 class="skill-name">Sass</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                    </div>
+                </div>
+                <div class="skills-grid" id="backend">
+                    <div class="skill-card animate-on-scroll" style="--delay: 0">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <h4 class="skill-name">Node.js</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 1">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h4 class="skill-name">Python</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 2">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h4 class="skill-name">Java</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 3">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4 class="skill-name">MongoDB</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 4">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h4 class="skill-name">Firebase</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 5">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <h4 class="skill-name">PHP/MySQL</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                    </div>
+                </div>
+                <div class="skills-grid" id="tools">
+                    <div class="skill-card animate-on-scroll" style="--delay: 0">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <h4 class="skill-name">Git & GitHub</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 1">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <h4 class="skill-name">Figma</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 2">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <h4 class="skill-name">Docker</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="65"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 3">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <h4 class="skill-name">Linux/CLI</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 4">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <h4 class="skill-name">AWS Basics</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="60"></div></div>
+                    </div>
+                    <div class="skill-card animate-on-scroll" style="--delay: 5">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4 class="skill-name">UI/UX Design</h4>
+                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="section-subtitle">Some things I've built</p>
+            </div>
+            <div class="project-filters animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">UI/UX</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card animate-on-scroll" data-category="web">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-desc">A full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll" data-category="web">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">Vue.js</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">WebSocket</span>
+                        </div>
+                        <h3 class="project-title">Real-Time Chat App</h3>
+                        <p class="project-desc">A feature-rich messaging platform with real-time updates, file sharing, and group chat functionality.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">React Native</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">AI/ML</span>
+                        </div>
+                        <h3 class="project-title">Fitness Tracker App</h3>
+                        <p class="project-desc">A mobile fitness companion with AI-powered workout recommendations and progress tracking.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll" data-category="design">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">Figma</span>
+                            <span class="project-tag">UI/UX</span>
+                            <span class="project-tag">Prototype</span>
+                        </div>
+                        <h3 class="project-title">Restaurant App Design</h3>
+                        <p class="project-desc">A stunning UI/UX design for a food ordering application with intuitive user flows and modern aesthetics.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll" data-category="web">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">Prisma</span>
+                            <span class="project-tag">PostgreSQL</span>
+                        </div>
+                        <h3 class="project-title">Project Management Tool</h3>
+                        <p class="project-desc">A collaborative project management platform with kanban boards, task tracking, and team analytics.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Dart</span>
+                            <span class="project-tag">Firebase</span>
+                        </div>
+                        <h3 class="project-title">Budget Tracker</h3>
+                        <p class="project-desc">A personal finance app with expense categorization, budget planning, and insightful spending analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience/Timeline Section -->
+    <section class="experience section" id="experience">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;experience&gt;</span>
+                <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+                <p class="section-subtitle">Education & Experience</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3 class="timeline-title">Higher National Diploma in Information Technology (HNDIT)</h3>
+                        <span class="timeline-company">Sri Lanka Institute of Advanced Technological Education (SLIATE)</span>
+                        <p class="timeline-desc">Pursuing a comprehensive diploma covering software engineering, data structures, algorithms, and modern web technologies at Dehiwala campus.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - Present</span>
+                        <h3 class="timeline-title">Freelance Full-Stack Developer</h3>
+                        <span class="timeline-company">Self-Employed</span>
+                        <p class="timeline-desc">Building custom web applications and delivering end-to-end solutions for clients. Specializing in React, Node.js, and modern web technologies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3 class="timeline-title">Web Development Intern</h3>
+                        <span class="timeline-company">Tech Company</span>
+                        <p class="timeline-desc">Contributed to frontend development using React and collaborated with the design team to implement responsive UI components.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023</span>
+                        <h3 class="timeline-title">Hackathon Winner</h3>
+                        <span class="timeline-company">National Level Competition</span>
+                        <p class="timeline-desc">Won first place in a national hackathon by building an innovative solution for community-driven learning platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;testimonials&gt;</span>
+                <h2 class="section-title">What People <span class="gradient-text">Say</span></h2>
+                <p class="section-subtitle">Feedback from clients and colleagues</p>
+            </div>
+            <div class="testimonial-slider animate-on-scroll">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Manula delivered exceptional work on our web application. His attention to detail and creative approach exceeded our expectations. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div>
+                                <h4 class="author-name">Kasun Perera</h4>
+                                <span class="author-role">Startup Founder</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Working with Manula was a great experience. He understood our requirements perfectly and delivered a beautiful, responsive website on time."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div>
+                                <h4 class="author-name">Sachini Fernando</h4>
+                                <span class="author-role">Business Owner</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Manula is incredibly talented and dedicated. His code quality and problem-solving skills are impressive for someone still in university. A future star!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div>
+                                <h4 class="author-name">Prof. Silva</h4>
+                                <span class="author-role">University Lecturer</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="testimonialPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots" id="testimonialDots"></div>
+                    <button class="testimonial-btn next" id="testimonialNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle">Let's work together on something great</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <h3 class="contact-heading">Let's talk about your project</h3>
+                    <p class="contact-text">
+                        I'm always excited to take on new challenges and collaborate on innovative projects. 
+                        Whether you need a website, web app, or just want to say hello — feel free to reach out!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:nimsaramanula100@gmail.com" class="contact-value">nimsaramanula100@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <a href="tel:+94727039898" class="contact-value">+94 72 703 9898</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Dehiwala, Sri Lanka</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://github.com/nimsaramanula100" target="_blank" class="contact-social" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/manula-nimsara-87a3a72a9" target="_blank" class="contact-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/itz_manu.n.s_" target="_blank" class="contact-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form animate-on-scroll" id="contactForm">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="subject" name="subject" required placeholder=" ">
+                            <label for="subject">Subject</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>MN<span class="logo-bracket">/&gt;</span>
+                    </a>
+                    <p class="footer-desc">Building digital experiences with passion and precision. Let's create something amazing together.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">API Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="footer-socials">
+                        <a href="https://github.com/nimsaramanula100" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/manula-nimsara-87a3a72a9" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/itz_manu.n.s_" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Manula Nimsara Samarasinghe. All rights reserved.</p>
+                <p>Designed & Built with <span class="heart">&hearts;</span> by Manula</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
