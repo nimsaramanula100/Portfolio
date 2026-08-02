@@ -33,16 +33,58 @@ document.addEventListener('DOMContentLoaded', () => {
     let mouseX = 0, mouseY = 0;
     let followerX = 0, followerY = 0;
 
+    // Trail particles for the cursor
+    const cursorTrails = [];
+    const maxTrails = 8;
+
+    function createTrailDot(x, y) {
+        const trail = document.createElement('div');
+        trail.style.cssText = `
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: rgba(0, 229, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99997;
+            left: ${x}px;
+            top: ${y}px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            box-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+        `;
+        document.body.appendChild(trail);
+        cursorTrails.push(trail);
+
+        // Fade out and remove
+        requestAnimationFrame(() => {
+            trail.style.opacity = '0';
+            trail.style.transform = 'scale(0)';
+        });
+
+        setTimeout(() => {
+            trail.remove();
+            cursorTrails.shift();
+        }, 500);
+    }
+
+    let trailCounter = 0;
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        // Offset so the arrow tip (top-left of SVG) lands at the mouse point
         cursor.style.left = mouseX - 4 + 'px';
-        cursor.style.top = mouseY - 4 + 'px';
+        cursor.style.top = mouseY - 2 + 'px';
+
+        // Create trail particles every few frames
+        trailCounter++;
+        if (trailCounter % 3 === 0) {
+            createTrailDot(mouseX, mouseY);
+        }
     });
 
     function animateCursorFollower() {
-        followerX += (mouseX - followerX - 18) * 0.15;
-        followerY += (mouseY - followerY - 18) * 0.15;
+        followerX += (mouseX - followerX - 20) * 0.12;
+        followerY += (mouseY - followerY - 20) * 0.12;
         cursorFollower.style.left = followerX + 'px';
         cursorFollower.style.top = followerY + 'px';
         requestAnimationFrame(animateCursorFollower);
@@ -543,24 +585,26 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Construct the mailto link
+        const mailtoLink = `mailto:nimsaramanula100@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+        
+        // Open the email client
+        window.location.href = mailtoLink;
+
+        // Show a brief success visual and reset form
         const submitBtn = document.getElementById('submitBtn');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
-        submitBtn.disabled = true;
-
-        // Simulate form submission
+        submitBtn.innerHTML = '<span>Opening Email App...</span><i class="fas fa-check"></i>';
+        
         setTimeout(() => {
-            formStatus.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
-            formStatus.className = 'form-status success';
             submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
             contactForm.reset();
-
-            setTimeout(() => {
-                formStatus.textContent = '';
-                formStatus.className = 'form-status';
-            }, 5000);
-        }, 2000);
+        }, 3000);
     });
 
     // ===========================
