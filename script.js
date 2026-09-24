@@ -728,20 +728,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (aloraLuxeCard) {
-        aloraLuxeCard.addEventListener('click', (e) => {
-            // Prevent if clicked directly on social external links
+    // Attach click event to all project cards & view details buttons
+    const allProjectCards = document.querySelectorAll('.project-card');
+    allProjectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Don't open modal if clicked directly on external action link
             if (e.target.closest('.project-link')) return;
-            openProjectModal(aloraLuxeCard);
+            openProjectModal(card);
         });
-    }
 
-    if (aloraLuxeBtn) {
-        aloraLuxeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openProjectModal(aloraLuxeCard);
-        });
-    }
+        const btn = card.querySelector('.project-details-btn');
+        if (btn) {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openProjectModal(card);
+            });
+        }
+    });
 
     if (modalCloseBtn) {
         modalCloseBtn.addEventListener('click', closeProjectModal);
