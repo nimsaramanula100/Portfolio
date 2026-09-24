@@ -698,13 +698,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===========================
-    // DOWNLOAD CV (placeholder)
+    // PROJECT MODAL EXPAND LOGIC
     // ===========================
-    const downloadCV = document.getElementById('downloadCV');
-    if (downloadCV) {
-        downloadCV.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('CV download feature - Add your CV file to enable this!');
+    const projectModalBackdrop = document.getElementById('projectModalBackdrop');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const aloraLuxeCard = document.querySelector('[data-project="aloraluxe"]');
+    const aloraLuxeBtn = document.querySelector('.project-details-btn[data-project="aloraluxe"]');
+
+    function openProjectModal() {
+        if (projectModalBackdrop) {
+            projectModalBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeProjectModal() {
+        if (projectModalBackdrop) {
+            projectModalBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (aloraLuxeCard) {
+        aloraLuxeCard.addEventListener('click', (e) => {
+            // Prevent if clicked directly on social external links
+            if (e.target.closest('.project-link')) return;
+            openProjectModal();
         });
     }
+
+    if (aloraLuxeBtn) {
+        aloraLuxeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openProjectModal();
+        });
+    }
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeProjectModal);
+    }
+
+    if (projectModalBackdrop) {
+        projectModalBackdrop.addEventListener('click', (e) => {
+            if (e.target === projectModalBackdrop) {
+                closeProjectModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectModalBackdrop && projectModalBackdrop.classList.contains('active')) {
+            closeProjectModal();
+        }
+    });
 });
