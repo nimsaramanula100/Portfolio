@@ -701,12 +701,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // PROJECT MODAL EXPAND LOGIC
     // ===========================
     const projectModalBackdrop = document.getElementById('projectModalBackdrop');
+    const projectModal = document.getElementById('projectModal');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
     const aloraLuxeCard = document.querySelector('[data-project="aloraluxe"]');
     const aloraLuxeBtn = document.querySelector('.project-details-btn[data-project="aloraluxe"]');
 
-    function openProjectModal() {
-        if (projectModalBackdrop) {
+    function openProjectModal(cardElement) {
+        if (projectModalBackdrop && projectModal) {
+            if (cardElement) {
+                const rect = cardElement.getBoundingClientRect();
+                const originX = rect.left + rect.width / 2;
+                const originY = rect.top + rect.height / 2;
+                projectModal.style.transformOrigin = `${originX}px ${originY}px`;
+            } else {
+                projectModal.style.transformOrigin = 'center center';
+            }
             projectModalBackdrop.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -723,14 +732,14 @@ document.addEventListener('DOMContentLoaded', () => {
         aloraLuxeCard.addEventListener('click', (e) => {
             // Prevent if clicked directly on social external links
             if (e.target.closest('.project-link')) return;
-            openProjectModal();
+            openProjectModal(aloraLuxeCard);
         });
     }
 
     if (aloraLuxeBtn) {
         aloraLuxeBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            openProjectModal();
+            openProjectModal(aloraLuxeCard);
         });
     }
 
