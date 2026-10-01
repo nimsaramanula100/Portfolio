@@ -337,33 +337,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===========================
-    // THEME TOGGLE
-    // ===========================
-    const themeToggle = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-        const icon = themeToggle.querySelector('i');
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
-
-    // ===========================
     // TYPEWRITER EFFECT
     // ===========================
     const typewriterElement = document.getElementById('typewriter');
     const roles = [
         'Full-Stack Developer',
-        'UI/UX Designer',
+        'Vibe Coder',
         'Mobile App Developer',
         'Problem Solver',
         'Creative Thinker',
@@ -508,103 +487,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===========================
-    // PROJECT FILTERS
-    // ===========================
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.getAttribute('data-filter');
-
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (filter === 'all' || category === filter) {
-                    card.classList.remove('hidden');
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        });
-    });
-
-    // ===========================
-    // TESTIMONIAL SLIDER
-    // ===========================
-    const testimonialTrack = document.getElementById('testimonialTrack');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.getElementById('testimonialPrev');
-    const nextBtn = document.getElementById('testimonialNext');
-    const dotsContainer = document.getElementById('testimonialDots');
-    let currentTestimonial = 0;
-
-    // Create dots
-    testimonialCards.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('testimonial-dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToTestimonial(index));
-        dotsContainer.appendChild(dot);
-    });
-
-    function goToTestimonial(index) {
-        currentTestimonial = index;
-        testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
-
-        document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        });
-    }
-
-    prevBtn.addEventListener('click', () => {
-        currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
-        goToTestimonial(currentTestimonial);
-    });
-
-    nextBtn.addEventListener('click', () => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-        goToTestimonial(currentTestimonial);
-    });
-
-    // Auto slide
-    setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-        goToTestimonial(currentTestimonial);
-    }, 5000);
-
-    // ===========================
     // CONTACT FORM
     // ===========================
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-
-        // Construct the mailto link
-        const mailtoLink = `mailto:nimsaramanula100@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
-        
-        // Open the email client
-        window.location.href = mailtoLink;
-
-        // Show a brief success visual and reset form
         const submitBtn = document.getElementById('submitBtn');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>Opening Email App...</span><i class="fas fa-check"></i>';
-        
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+        formStatus.className = 'form-status';
+        formStatus.textContent = 'Sending your message...';
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/nimsaramanula100@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(new FormData(contactForm).entries()))
+            });
+            const result = await response.json();
+
+            if (!response.ok || result.success === false || result.success === 'false') {
+                throw new Error(result.message || 'Message could not be sent. Please try again.');
+            }
+
+            formStatus.className = 'form-status success';
+            formStatus.textContent = 'Message sent successfully. Thank you!';
             contactForm.reset();
-        }, 3000);
+        } catch (error) {
+            formStatus.className = 'form-status error';
+            formStatus.textContent = error.message || 'Message could not be sent. Please try again.';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        }
     });
 
     // ===========================

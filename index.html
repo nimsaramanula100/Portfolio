@@ -47,9 +47,6 @@
                 <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
                 <a href="#contact" class="nav-cta">Hire Me</a>
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
@@ -117,7 +114,7 @@
                 </div>
                 <div class="hero-stats animate-on-scroll">
                     <div class="stat-item">
-                        <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-number" data-target="4">0</span>
                         <span class="stat-label">Projects</span>
                     </div>
                     <div class="stat-divider"></div>
@@ -190,8 +187,10 @@
                     </p>
                     <p class="about-text">
                         My journey in tech started with curiosity about how websites work, and it has evolved 
-                        into a deep love for full-stack development, UI/UX design, and solving complex problems 
-                        with elegant code.
+                        into a deep love for full-stack development, vibe coding, and solving complex problems
+                        with elegant code. I enjoy using vibe coding to turn ideas into interactive, responsive
+                        experiences while learning new tools and refining each project. From shaping the interface
+                        to connecting features and data, I aim to build products that are clear, useful, and enjoyable to use.
                     </p>
                     <div class="about-info-grid">
                         <div class="info-item">
@@ -250,6 +249,8 @@
                 <button class="skill-tab active" data-tab="frontend">Frontend</button>
                 <button class="skill-tab" data-tab="backend">Backend</button>
                 <button class="skill-tab" data-tab="tools">Tools & Others</button>
+                <button class="skill-tab" data-tab="technical-concepts">Technical Concepts</button>
+                <button class="skill-tab" data-tab="soft-skills">Soft Skills</button>
             </div>
             <div class="skills-content">
                 <div class="skills-grid active" id="frontend">
@@ -281,12 +282,24 @@
                         <h4 class="skill-name">React</h4>
                         <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
                     </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 6">
+                        <div class="skill-icon-wrapper">
+                            <i class="fab fa-vuejs"></i>
+                        </div>
+                        <h4 class="skill-name">Vue 3</h4>
+                    </div>
                     <div class="skill-card animate-on-scroll" style="--delay: 4">
                         <div class="skill-icon-wrapper">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <h4 class="skill-name">Flutter</h4>
                         <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 7">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="skill-name">Dart</h4>
                     </div>
                     <div class="skill-card animate-on-scroll" style="--delay: 5">
                         <div class="skill-icon-wrapper">
@@ -303,6 +316,12 @@
                         </div>
                         <h4 class="skill-name">Node.js</h4>
                         <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 6">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4 class="skill-name">Express.js</h4>
                     </div>
                     <div class="skill-card animate-on-scroll" style="--delay: 1">
                         <div class="skill-icon-wrapper">
@@ -322,7 +341,7 @@
                         <div class="skill-icon-wrapper">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h4 class="skill-name">MongoDB</h4>
+                        <h4 class="skill-name">MongoDB Atlas</h4>
                         <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
                     </div>
                     <div class="skill-card animate-on-scroll" style="--delay: 4">
@@ -331,6 +350,30 @@
                         </div>
                         <h4 class="skill-name">Firebase</h4>
                         <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 7">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4 class="skill-name">Socket.IO</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 8">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4 class="skill-name">Mongoose</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 9">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4 class="skill-name">Firebase Authentication</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 10">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4 class="skill-name">Cloud Firestore</h4>
                     </div>
                     <div class="skill-card animate-on-scroll" style="--delay: 5">
                         <div class="skill-icon-wrapper">
@@ -383,6 +426,70 @@
                         <h4 class="skill-name">UI/UX Design</h4>
                         <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
                     </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 6">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h4 class="skill-name">Vercel</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 7">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4 class="skill-name">Render</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 8">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h4 class="skill-name">Provider</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 9">
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h4 class="skill-name">Vibe Coding</h4>
+                    </div>
+                </div>
+                <div class="skills-grid" id="technical-concepts">
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 0">
+                        <div class="skill-icon-wrapper"><i class="fas fa-cubes"></i></div>
+                        <h4 class="skill-name">Object-Oriented Programming</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 1">
+                        <div class="skill-icon-wrapper"><i class="fas fa-plug"></i></div>
+                        <h4 class="skill-name">REST APIs</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 2">
+                        <div class="skill-icon-wrapper"><i class="fas fa-list-check"></i></div>
+                        <h4 class="skill-name">CRUD Operations</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 3">
+                        <div class="skill-icon-wrapper"><i class="fas fa-diagram-project"></i></div>
+                        <h4 class="skill-name">Database Design</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 4">
+                        <div class="skill-icon-wrapper"><i class="fas fa-shield-halved"></i></div>
+                        <h4 class="skill-name">Authentication</h4>
+                    </div>
+                </div>
+                <div class="skills-grid skills-grid-compact" id="soft-skills">
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 0">
+                        <div class="skill-icon-wrapper"><i class="fas fa-lightbulb"></i></div>
+                        <h4 class="skill-name">Problem Solving</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 1">
+                        <div class="skill-icon-wrapper"><i class="fas fa-users"></i></div>
+                        <h4 class="skill-name">Teamwork</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 2">
+                        <div class="skill-icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
+                        <h4 class="skill-name">Quick Learning</h4>
+                    </div>
+                    <div class="skill-card skill-card-no-level animate-on-scroll" style="--delay: 3">
+                        <div class="skill-icon-wrapper"><i class="fas fa-comments"></i></div>
+                        <h4 class="skill-name">Communication</h4>
+                    </div>
                 </div>
             </div>
         </div>
@@ -396,131 +503,107 @@
                 <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
                 <p class="section-subtitle">Some things I've built</p>
             </div>
-            <div class="project-filters animate-on-scroll">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="design">UI/UX</button>
-            </div>
             <div class="projects-grid">
                 <div class="project-card animate-on-scroll" data-category="web">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
+                        <img src="assets/aloraluxe.png" alt="AloraLuxe premium e-commerce platform preview" class="project-card-img">
                         <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                            <a href="https://auralexu.vercel.app/" class="project-link" aria-label="Visit AloraLuxe live site" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/nimsaramanula100/nexcart-ecommerce" class="project-link" aria-label="View AloraLuxe source code on GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="project-tag">React</span>
                             <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Express.js</span>
                             <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Vercel</span>
+                            <span class="project-tag">Render</span>
                         </div>
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-desc">A full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.</p>
+                        <h3 class="project-title">AloraLuxe — Premium E-Commerce Platform</h3>
+                        <p class="project-desc">A full-stack luxury e-commerce app with dynamic category filtering, real-time catalog search, REST API integration, and cloud-hosted database management.</p>
                     </div>
                 </div>
                 <div class="project-card animate-on-scroll" data-category="web">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-comments"></i>
-                        </div>
+                        <iframe class="project-preview" src="https://mychat2026.vercel.app/" title="MyChat live app preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
                         <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                            <a href="https://mychat2026.vercel.app/" class="project-link" aria-label="Open MyChat live app" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/nimsaramanula100/MyChat-" class="project-link" aria-label="View MyChat source code on GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
-                            <span class="project-tag">Vue.js</span>
-                            <span class="project-tag">Firebase</span>
-                            <span class="project-tag">WebSocket</span>
+                            <span class="project-tag">Vue 3 + JavaScript</span>
+                            <span class="project-tag">HTML Templates + CSS</span>
+                            <span class="project-tag">Node.js + Express.js</span>
+                            <span class="project-tag">MongoDB Atlas + Mongoose</span>
+                            <span class="project-tag">Socket.IO</span>
+                            <span class="project-tag">Firebase SDK</span>
                         </div>
                         <h3 class="project-title">Real-Time Chat App</h3>
-                        <p class="project-desc">A feature-rich messaging platform with real-time updates, file sharing, and group chat functionality.</p>
+                        <p class="project-desc">A real-time messaging app with a Vue 3 frontend, Node.js and Express backend, and Socket.IO. MongoDB Atlas via Mongoose is the primary database; Firebase SDK/config is also included.</p>
                     </div>
                 </div>
-                <div class="project-card animate-on-scroll" data-category="mobile">
+                <div class="project-card animate-on-scroll" data-category="web">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
+                        <iframe class="project-preview" src="https://singharaja-heritage-tea.vercel.app/" title="Singharaja Heritage Tea storefront preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
                         <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                            <a href="https://singharaja-heritage-tea.vercel.app/" class="project-link" aria-label="Visit Singharaja Heritage Tea shop" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/nimsaramanula100/My-First-Website" class="project-link" aria-label="View Singharaja Heritage Tea source code on GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
-                            <span class="project-tag">React Native</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">AI/ML</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Express.js</span>
+                            <span class="project-tag">MongoDB Atlas</span>
+                            <span class="project-tag">Mongoose</span>
                         </div>
-                        <h3 class="project-title">Fitness Tracker App</h3>
-                        <p class="project-desc">A mobile fitness companion with AI-powered workout recommendations and progress tracking.</p>
+                        <h3 class="project-title">Singharaja Heritage Tea</h3>
+                        <p class="project-desc">A Ceylon tea e-commerce storefront built with HTML, CSS, and JavaScript, backed by a Node.js and Express API with MongoDB Atlas through Mongoose.</p>
                     </div>
                 </div>
                 <div class="project-card animate-on-scroll" data-category="design">
                     <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-utensils"></i>
-                        </div>
+                        <img src="https://raw.githubusercontent.com/nimsaramanula100/My-Ticket-App/mvp-clean/assets/icons/appimage.png" alt="MyTickets mobile event ticketing app preview" class="project-card-img">
                         <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag">Figma</span>
-                            <span class="project-tag">UI/UX</span>
-                            <span class="project-tag">Prototype</span>
-                        </div>
-                        <h3 class="project-title">Restaurant App Design</h3>
-                        <p class="project-desc">A stunning UI/UX design for a food ordering application with intuitive user flows and modern aesthetics.</p>
-                    </div>
-                </div>
-                <div class="project-card animate-on-scroll" data-category="web">
-                    <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag">Next.js</span>
-                            <span class="project-tag">Prisma</span>
-                            <span class="project-tag">PostgreSQL</span>
-                        </div>
-                        <h3 class="project-title">Project Management Tool</h3>
-                        <p class="project-desc">A collaborative project management platform with kanban boards, task tracking, and team analytics.</p>
-                    </div>
-                </div>
-                <div class="project-card animate-on-scroll" data-category="mobile">
-                    <div class="project-image">
-                        <div class="project-image-placeholder">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" class="project-link" aria-label="View code"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/nimsaramanula100/My-Ticket-App" class="project-link" aria-label="View MyTickets source code on GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="project-tag">Flutter</span>
                             <span class="project-tag">Dart</span>
-                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">Firebase Auth</span>
+                            <span class="project-tag">Cloud Firestore</span>
+                            <span class="project-tag">Provider</span>
                         </div>
-                        <h3 class="project-title">Budget Tracker</h3>
-                        <p class="project-desc">A personal finance app with expense categorization, budget planning, and insightful spending analytics.</p>
+                        <h3 class="project-title">MyTickets — Event Ticketing App</h3>
+                        <p class="project-desc">A Flutter and Dart mobile app for browsing events, booking tickets, and managing reservations with Firebase Authentication and Cloud Firestore.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll" data-category="web">
+                    <div class="project-image">
+                        <iframe class="project-preview" src="https://manulanimsara.vercel.app/" title="Manula Nimsara portfolio preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+                        <div class="project-overlay">
+                            <a href="https://manulanimsara.vercel.app/" class="project-link" aria-label="Visit Manula Nimsara portfolio" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/nimsaramanula100/Portfolio" class="project-link" aria-label="View portfolio source code on GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Vibe Coding</span>
+                        </div>
+                        <h3 class="project-title">Manula Nimsara — Developer Portfolio</h3>
+                        <p class="project-desc">A personal developer portfolio built with HTML, CSS, and JavaScript. The UI/UX design was created using vibe coding.</p>
                     </div>
                 </div>
             </div>
@@ -536,6 +619,28 @@
                 <p class="section-subtitle">Education & Experience</p>
             </div>
             <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">E-Certificate</span>
+                        <h3 class="timeline-title">Web Design for Beginners</h3>
+                        <span class="timeline-company">Centre for Open & Distance Learning (CODL), University of Moratuwa</span>
+                        <p class="timeline-desc">Completed the online learning programme in Web Design. <a href="https://open.uom.lk/verify" target="_blank" rel="noopener noreferrer">Verify certificate</a> · Code: HzclTp7LNs</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">February 2, 2024</span>
+                        <h3 class="timeline-title">Python for Beginners</h3>
+                        <span class="timeline-company">Department of Computer Science & Engineering, University of Moratuwa</span>
+                        <p class="timeline-desc">Completed the online learning programme conducted by CODL. <a href="https://open.uom.lk/verify" target="_blank" rel="noopener noreferrer">Verify certificate</a> · Code: G1GfFgrQHr</p>
+                    </div>
+                </div>
                 <div class="timeline-item animate-on-scroll">
                     <div class="timeline-dot">
                         <i class="fas fa-graduation-cap"></i>
@@ -586,68 +691,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials section" id="testimonials">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-
-                <h2 class="section-title">What People <span class="gradient-text">Say</span></h2>
-                <p class="section-subtitle">Feedback from clients and colleagues</p>
-            </div>
-            <div class="testimonial-slider animate-on-scroll">
-                <div class="testimonial-track" id="testimonialTrack">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p class="testimonial-text">"ABCD"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
-                            <div>
-                                <h4 class="author-name">Kasun Perera</h4>
-                                <span class="author-role">Startup Founder</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p class="testimonial-text">"ABCDE"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
-                            <div>
-                                <h4 class="author-name">Sachini Fernando</h4>
-                                <span class="author-role">Business Owner</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p class="testimonial-text">"ABCDEF"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
-                            <div>
-                                <h4 class="author-name">Prof. Silva</h4>
-                                <span class="author-role">University Lecturer</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-controls">
-                    <button class="testimonial-btn prev" id="testimonialPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-                    <div class="testimonial-dots" id="testimonialDots"></div>
-                    <button class="testimonial-btn next" id="testimonialNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section class="contact section" id="contact">
         <div class="container">
@@ -692,7 +735,8 @@
                         <a href="https://instagram.com/itz_manu.n.s_" target="_blank" class="contact-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form class="contact-form animate-on-scroll" id="contactForm">
+                <form class="contact-form animate-on-scroll" id="contactForm" action="https://formsubmit.co/nimsaramanula100@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New portfolio contact message">
                     <div class="form-group">
                         <div class="input-wrapper">
                             <input type="text" id="name" name="name" required placeholder=" ">
@@ -725,7 +769,7 @@
                         <span>Send Message</span>
                         <i class="fas fa-paper-plane"></i>
                     </button>
-                    <div class="form-status" id="formStatus"></div>
+                    <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
                 </form>
             </div>
         </div>
