@@ -618,15 +618,4 @@ document.addEventListener('DOMContentLoaded', () => {
             shape.style.transform = `translateY(${scrolled * speed}px)`;
         });
     });
-
-    // ===========================
-    // DOWNLOAD CV (placeholder)
-    // ===========================
-    const downloadCV = document.getElementById('downloadCV');
-    if (downloadCV) {
-        downloadCV.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('CV download feature - Add your CV file to enable this!');
-        });
-    }
 });
