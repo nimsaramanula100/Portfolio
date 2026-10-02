@@ -607,6 +607,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
+    const certificateDialog = document.getElementById('certificateDialog');
+    if (certificateDialog) {
+        const certificateImage = document.getElementById('certificatePreviewImage');
+        const certificateTitle = document.getElementById('certificateDialogTitle');
+        const certificateFallback = document.getElementById('certificateImageFallback');
+        const certificateVerifyLink = document.getElementById('certificateVerifyLink');
+
+        document.querySelectorAll('.certificate-card').forEach(card => {
+            card.addEventListener('click', () => {
+                certificateTitle.textContent = card.dataset.certificateTitle;
+                certificateImage.alt = `${card.dataset.certificateTitle} certificate`;
+                certificateFallback.hidden = true;
+                certificateImage.hidden = true;
+                certificateImage.onerror = () => {
+                    certificateImage.hidden = true;
+                    certificateFallback.hidden = false;
+                };
+                certificateImage.onload = () => {
+                    certificateImage.hidden = false;
+                    certificateFallback.hidden = true;
+                };
+                certificateImage.src = card.dataset.certificateSrc;
+                certificateVerifyLink.href = card.dataset.verifyUrl;
+                certificateDialog.showModal();
+            });
+        });
+
+        document.getElementById('certificateDialogClose').addEventListener('click', () => {
+            certificateDialog.close();
+        });
+
+        certificateDialog.addEventListener('click', event => {
+            if (event.target === certificateDialog) {
+                certificateDialog.close();
+            }
+        });
+
+        certificateDialog.addEventListener('close', () => {
+            certificateImage.removeAttribute('src');
+            certificateImage.hidden = true;
+            certificateFallback.hidden = true;
+        });
+    }
+
     // ===========================
     // PARALLAX EFFECT ON HERO SHAPES
     // ===========================

@@ -688,32 +688,48 @@
                 <h2 class="section-title">Certifications</h2>
                 <p class="section-subtitle">Courses and certificates</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-dot">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">February 2024</span>
-                        <h3 class="timeline-title">Web Design for Beginners</h3>
-                        <span class="timeline-company">Centre for Open &amp; Distance Learning (CODL), University of Moratuwa</span>
-                        <p class="timeline-desc">Completed the online learning programme in Web Design. <a href="https://open.uom.lk/verify" target="_blank" rel="noopener noreferrer">Verify certificate</a> · Code: HzclTp7LNs</p>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-dot">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">February 2, 2024</span>
-                        <h3 class="timeline-title">Python for Beginners</h3>
-                        <span class="timeline-company">Department of Computer Science &amp; Engineering, University of Moratuwa</span>
-                        <p class="timeline-desc">Completed the online learning programme conducted by CODL. <a href="https://open.uom.lk/verify" target="_blank" rel="noopener noreferrer">Verify certificate</a> · Code: G1GfFgrQHr</p>
-                    </div>
-                </div>
+            <div class="certificate-grid">
+                <button class="certificate-card" type="button" data-certificate-src="assets/certificates/web-design-for-beginners.png" data-certificate-title="Web Design for Beginners" data-verify-url="https://open.uom.lk/lms/mod/customcert/verify_certificate.php?code=HzclTp7LNs">
+                    <span class="timeline-date">February 2024</span>
+                    <span class="certificate-card-icon"><i class="fas fa-certificate" aria-hidden="true"></i></span>
+                    <span class="certificate-card-title">Web Design for Beginners</span>
+                    <span class="certificate-card-issuer">Centre for Open &amp; Distance Learning (CODL), University of Moratuwa</span>
+                    <span class="certificate-card-action">View certificate <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                </button>
+                <button class="certificate-card" type="button" data-certificate-src="assets/certificates/python-for-beginners.png" data-certificate-title="Python for Beginners" data-verify-url="https://open.uom.lk/lms/mod/customcert/verify_certificate.php?code=G1GfFgrQHr">
+                    <span class="timeline-date">February 2, 2024</span>
+                    <span class="certificate-card-icon"><i class="fas fa-certificate" aria-hidden="true"></i></span>
+                    <span class="certificate-card-title">Python for Beginners</span>
+                    <span class="certificate-card-issuer">Department of Computer Science &amp; Engineering, University of Moratuwa</span>
+                    <span class="certificate-card-action">View certificate <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                </button>
             </div>
         </div>
     </section>
+
+    <dialog class="certificate-dialog" id="certificateDialog" aria-labelledby="certificateDialogTitle">
+        <div class="certificate-dialog-panel">
+            <div class="certificate-dialog-header">
+                <div>
+                    <p class="certificate-dialog-eyebrow">Certificate preview</p>
+                    <h2 class="certificate-dialog-title" id="certificateDialogTitle"></h2>
+                </div>
+                <button class="certificate-dialog-close" id="certificateDialogClose" type="button" aria-label="Close certificate preview">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="certificate-image-frame">
+                <img class="certificate-preview-image" id="certificatePreviewImage" alt="" hidden>
+                <p class="certificate-image-fallback" id="certificateImageFallback" role="status">Certificate image not found. Add the image to the matching assets/certificates path.</p>
+            </div>
+            <div class="certificate-dialog-footer">
+                <a class="btn btn-primary" id="certificateVerifyLink" href="#" target="_blank" rel="noopener noreferrer">
+                    <span>Verify certificate</span>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </dialog>
 
     <!-- Contact Section -->
     <section class="contact section" id="contact">
