@@ -2,11 +2,20 @@
    PORTFOLIO JAVASCRIPT
    Manula Nimsara - Premium Portfolio
    =========================== */
+/*
+    This script runs after the HTML is fully loaded.
+    document.addEventListener('DOMContentLoaded', ...) waits until the page DOM is ready,
+    so we can safely select elements like buttons, forms, sections, and images.
+    Without this step, JavaScript may try to access elements before they exist.
+*/
 
 document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     // PRELOADER
     // ===========================
+    // This section creates a loading screen before the page becomes interactive.
+    // getElementById() finds the HTML element with the matching id, then setInterval()
+    // increases the percentage repeatedly until it reaches 100%.
     const preloader = document.getElementById('preloader');
     const preloaderPercentage = document.getElementById('preloaderPercentage');
     let loadProgress = 0;
@@ -28,6 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     // CUSTOM CURSOR
     // ===========================
+    // This block gives the page a custom cursor and follower effect.
+    // The mousemove event updates the position of the cursor every time the mouse moves.
+    // requestAnimationFrame() keeps the animation smooth without lagging the browser.
     const cursor = document.getElementById('cursor');
     const cursorFollower = document.getElementById('cursorFollower');
     let mouseX = 0, mouseY = 0;
@@ -107,6 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     // PARTICLE & CODE STREAM CANVAS (Developer Spectrum)
     // ===========================
+    // The canvas is a drawing surface for animated particles and floating code snippets.
+    // It creates a modern developer-themed background and helps the portfolio feel alive.
     const canvas = document.getElementById('particleCanvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -122,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { r: 168, g: 85,  b: 247 }  // Purple
     ];
 
+    // The codeSnippets array stores sample developer text.
+    // Each string is randomly chosen and drawn on the canvas to create a coding atmosphere.
     const codeSnippets = [
         'const dev = new FullStackDeveloper("Manula");',
         'async function buildUI() { await renderGlass(); }',
@@ -272,6 +288,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     // NAVIGATION
     // ===========================
+    // This navigation code keeps the header visible and updates the active menu item.
+    // The scroll event checks the current page position and adds/removes the "scrolled" state.
     const navbar = document.getElementById('navbar');
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -339,6 +357,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     // TYPEWRITER EFFECT
     // ===========================
+    // The typewriter effect cycles through a list of roles and updates the text one character at a time.
+    // It uses a state machine: charIndex, isDeleting, and roleIndex decide the next character and whether to delete or continue typing.
     const typewriterElement = document.getElementById('typewriter');
     const roles = [
         'Full-Stack Developer',
@@ -489,6 +509,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     // CONTACT FORM
     // ===========================
+    // The browser collects form data with new FormData(contactForm).
+    // The fetch() request sends the data as JSON to FormSubmit, which forwards it to the email address.
+    // The response is checked to confirm success before showing a message to the user.
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
 

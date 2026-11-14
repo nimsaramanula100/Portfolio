@@ -1,6 +1,12 @@
 /* ===========================
    CSS VARIABLES & THEME
    =========================== */
+/*
+    CSS variables act like named storage containers.
+    Example: --bg-primary stores the dark background color.
+    The browser reads these variables everywhere in the file, which keeps the design consistent.
+    When the value changes here, all related sections update automatically.
+*/
 :root {
     /* Spectrum Palette Tokens */
     --color-blue: #3b82f6;
@@ -62,6 +68,11 @@
 /* ===========================
    RESET & BASE
    =========================== */
+/*
+    This reset block removes default browser spacing and ensures consistent sizing.
+    box-sizing: border-box means width and height include padding and borders,
+    which makes layout calculations easier and more predictable.
+*/
 *, *::before, *::after {
     margin: 0;
     padding: 0;
